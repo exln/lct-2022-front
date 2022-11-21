@@ -1,0 +1,107 @@
+.wrapper {
+	.roomsGroup {
+		@apply grid grid-cols-2 gap-x-7;
+		> ul {
+			@apply rounded-xl shadow-xl pt-3 px-3 mb-5 border border-gray-300;
+		}
+	}
+	> h3 {
+		display: block;
+		@media (max-width: 1200px) {
+			display: none;
+		}
+	}
+	> .hMobile {
+		display: none;
+		@media (max-width: 1200px) {
+			display: block;
+		}
+	}
+
+	.searchInput {
+		@apply w-full mb-5 drop-shadow-sm h-10 rounded-2xl border-2 px-5;
+		&:focus {
+			@apply border-2 border-gray-300;
+			outline: none;
+		}
+	}
+	.liComponent {
+		@apply bg-slate-50 mb-3 rounded-2xl drop-shadow-md py-3 px-7;
+		> .title {
+			@apply flex justify-between;
+			> .location {
+				@apply font-bold text-base bg-gray-50 my-auto flex;
+				//-----------------------
+				.togglerWrapper {
+					display: block;
+					width: 45px;
+					height: 25px;
+					cursor: pointer;
+					position: relative;
+					margin-right: 1rem;
+				}
+
+				.togglerWrapper input[type='checkbox'] {
+					display: none;
+				}
+
+				.togglerWrapper input[type='checkbox']:checked + .togglerSlider {
+					background-color: #44cc66;
+				}
+
+				.togglerWrapper .togglerSlider {
+					background-color: #ccc;
+					position: absolute;
+					border-radius: 100px;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					-webkit-transition: all 300ms ease;
+					transition: all 300ms ease;
+				}
+
+				.togglerWrapper .togglerKnob {
+					position: absolute;
+					-webkit-transition: all 300ms ease;
+					transition: all 300ms ease;
+				}
+
+				.togglerWrapper {
+					&.style1 {
+						input[type='checkbox']:checked {
+							& + .togglerSlider {
+								.togglerKnob {
+									left: calc(100% - 19px - 3px);
+								}
+							}
+						}
+					}
+				}
+
+				.togglerWrapper.style1 .togglerKnob {
+					width: calc(25px - 6px);
+					height: calc(25px - 6px);
+					border-radius: 50%;
+					left: 3px;
+					top: 3px;
+					background-color: #fff;
+				}
+				//-----------------------
+				> input {
+					@apply mr-5 rounded-full;
+				}
+			}
+		}
+		> .description {
+			@apply mt-2;
+			//display: none;
+			> ul {
+				@apply flex space-x-2 overflow-auto;
+				> li {
+					@apply bg-neutral-700 text-white font-light text-sm px-1.5 py-1 rounded-xl max-h-[28px] min-w-fit;
+				}
+			}
+		}
+	}
+}

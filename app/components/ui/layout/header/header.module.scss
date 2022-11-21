@@ -1,0 +1,44 @@
+.header {
+	@apply min-w-full w-screen h-14 px-24 flex border-b border-b-gray-400;
+	@media (max-width: 850px) {
+		@apply px-[5%];
+	}
+	justify-content: space-between;
+	> .logoBlock {
+		//background-color: aquamarine;
+		@apply flex justify-start w-fit;
+		> .logoSvg2 {
+			@media (max-width: 700px) {
+				display: none;
+			}
+		}
+	}
+	> .userBlock {
+		//background-color: indianred;
+		@apply flex justify-end w-fit;
+		.fileForm {
+			@apply my-1 rounded-xl border-2 border-dashed
+		border-gray-600 mr-6;
+			> .fileFormClick {
+				@apply rounded-xl block h-full text-center p-2.5 cursor-pointer bg-gray-100;
+				&:hover {
+					@apply bg-green-50 duration-200;
+				}
+				> .fileName {
+					@apply flex items-center text-gray-800;
+				}
+			}
+		}
+		.userIcon {
+			@apply text-center rounded-full my-1 border-2 border-solid
+			border-gray-600 h-[48px] w-[48px] cursor-pointer  bg-red-200;
+			.userIconImage {
+				@apply rounded-full;
+
+				&:hover {
+					@apply opacity-0 duration-500;
+				}
+			}
+		}
+	}
+}

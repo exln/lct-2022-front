@@ -1,0 +1,15 @@
+.cartWrapper {
+	@apply fixed w-[27rem] h-fit bottom-1 right-1 p-1 rounded-xl bg-white border-spacing-1 drop-shadow-md;
+	.cartComponent {
+		@apply py-2 px-3 bg-white my-1 rounded-xl drop-shadow-md font-light opacity-100 transition-opacity;
+		@media (max-width: 800px) {
+			@apply text-center py-1;
+		}
+	}
+	> button {
+		@apply text-center w-full drop-shadow-md rounded-xl bg-emerald-100 py-2.5 font-bold hover:bg-emerald-300 duration-200;
+	}
+	@media (max-width: 800px) {
+		@apply w-full;
+	}
+}

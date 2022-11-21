@@ -1,0 +1,33 @@
+.homePage {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 12px;
+	grid-row-gap: 0px;
+	@media (max-width: 1100px) {
+		display: block;
+	}
+	.mapContainer {
+		@apply pb-3 px-1;
+	}
+	.analogsContainer {
+		@apply h-[500px] rounded-2xl shadow-xl bg-amber-200 px-1;
+	}
+	.lastRequests {
+		@apply mt-2;
+		h3 {
+			//@apply;
+		}
+		.requestsContainer {
+			@apply min-h-[490px]  rounded-2xl shadow-xl px-1 py-2 max-h-[500px] overflow-y-scroll;
+			> ul {
+				> li {
+					@apply bg-slate-50 mb-2 rounded-2xl drop-shadow-md py-3 px-7 flex justify-between;
+					h4 {
+						@apply text-xl font-bold;
+					}
+				}
+			}
+		}
+	}
+}

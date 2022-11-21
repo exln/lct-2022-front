@@ -1,0 +1,13 @@
+.main {
+	@apply flex flex-wrap;
+
+	.content {
+		width: auto;
+		.wrapper {
+			@apply mx-24 pt-3;
+			@media (max-width: 850px) {
+				@apply mx-[5%];
+			}
+		}
+	}
+}
